@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="ad.css">
+    <link href="https://fonts.googleapis.com/css?family=Biryani:800" rel="stylesheet">
+
+</head>
+
+<body>
+<!--   <button onclick="play()" >Play</button>-->
+    <div id="banner">
+       
+<!--       spritesheet panel-->
+       
+        <div class="panel" id="panel1">
+           <div class="container">
+            <div class="spritesheet">
+
+
+            </div>
+            </div>
+
+
+        </div>
+        
+<!--        LOGO panel-->
+
+        <div class="panel" id="panel2">
+        
+
+        </div>
+        
+<!--        TEXT panel-->
+
+        <div class="panel" id="panel3">
+           <h1>your world kitchen</h1> 
+
+        </div>
+
+
+
+    </div>
+
+    <!--    Javascript-->
+    <script src="js/gsap/TweenMax.js"></script>
+	<script src="js/jquery/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            var M1 = TweenMax.to('.spritesheet',1.5,{repeat:3,backgroundPosition: "-316px",ease:SteppedEase.config(5)});
+            
+            var $panel1 = $("#panel1"),
+			$panel2 = $("#panel2"),
+			$panel3 = $("#panel3"),
+            $text = $("#panel3 h1"),
+            $pasta1 = $(".sprite-bowtie"),
+            $pasta5 = $(".sprite-spag"),
+            $sprite = $(".sprite"),
+                
+                
+                tl;
+            
+        tl = new TimelineMax({});
+              tl.from($panel1, 1, {opacity:0})
+             .set ($panel3, {top:200})
+            .from($text, 2, {opacity:0, scale:.5})
+            .to($text, 1, {opacity:1, scale:1})
+            .set($panel2, {top:0})
+            .from($panel2, 4, {opacity:0})
+            
+        
+            
+            
+
+            
+            function play(){ M1.play(); };
+            
+        });
+        
+        
+
+    </script>
+
+
+
+</body>
+
+</html>
